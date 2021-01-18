@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<head>
+  <title>
+    Setup Example
+  </title>
+  <script src='../Downloads/knockout-3.5.1.js'></script>
+  <script
+  src="https://code.jquery.com/jquery-3.5.1.js"
+  integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+  crossorigin="anonymous"></script>
+  <script>
+    $(function(){
+      let myViewModel=function(myCourse,myRating){
+        this.course=ko.observable(myCourse);
+        this.rating=ko.observable(myRating);
+        this.courseResult=ko.computed(function(){
+          return "This course of  "+this.course()+" got a rating of "+this.rating()
+                },this)
+    }
+    ko.applyBindings(new myViewModel("JavaScript",9))})
+  </script>
+</head>
+<body>
+  <p>Course: <input data-bind="value:course"/></p>
+  <p>Rating: <input data-bind="value:rating"/></p>
+  <h3><span data-bind="text:courseResult"></span></h3>
+</body>
+</head>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<head>
+  <title>
+    Setup Example
+  </title>
+  <script src='../Downloads/knockout-3.5.1.js'></script>
+  <script
+  src="https://code.jquery.com/jquery-3.5.1.js"
+  integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+  crossorigin="anonymous"></script>
+  <script>
+    $(function(){let myViewModel={
+      course:"KnockOut",
+      author:"Venkatesh"
+    }
+    ko.applyBindings(myViewModel)})
+  </script>
+</head>
+<body>
+  <div>
+    The course <u><span data-bind="text:course"></span></u>
+    will be thaught by <b><span data-bind="text:author"></span></b>
+  </div>
+  
+</body>
+</head>
